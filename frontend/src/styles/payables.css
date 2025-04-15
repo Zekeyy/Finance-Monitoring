@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General Styles */
+body {
+  font-family: "Calibri",Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #081C15, #40916C);
+    color: rgb(252, 252, 252);
+}
+
+/* Flex */
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.payables-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Calibri",Arial, Helvetica, sans-serif;
+  color: black;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c6e49;
+}
+
+.header-select {
+  padding: 8px 12px;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #495057;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Table Styles */
+.payables-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payables-table th,
+.payables-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.payables-table th {
+  background-color: #2c6e49;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.payables-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  z-index: 1;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+/* View Receipt Button */
+.view-receipt-btn {
+  background-color: #2c6e49;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.view-receipt-btn:hover {
+  background-color: #1a472f;
+}
+
+.view-receipt-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Status Badge Styles */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  text-align: center;
+  min-width: 100px;
+}
+
+.status-badge.pending {
+  background-color: #ffc107;
+  color: #856404;
+}
+
+.status-badge.paid {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-badge.cancelled {
+  background-color: #dc3545;
+  color: white;
+}
+.status-badge.others {
+  background-color: #444444;
+  color: white;
+}
+/* Status Modal Styles */
+.status-modal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 300px;
+}
+
+.status-modal-content h2 {
+  margin: 0;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.status-modal-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Receipt */
+.receipt-images {
+  width: 20vw;
+  max-height: 560px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.receipt-label {
+  padding-right: 180px;
+}
+
+/* Error and Success Messages */
+.error-message,
+.success-message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.error-message {
+  background-color: #ffe3e3;
+  color: #e03131;
+  border: 1px solid #ffa8a8;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.success-message {
+  background-color: #d3f9d8;
+  color: #2b8a3e;
+  border: 1px solid #8ce99a;
+}
+
+/* Buttons */
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-button {
+  background-color: #2c6e49;
+  color: white;
+  margin-right: 8px;
+}
+
+.edit-button:hover {
+  background-color: #1a472f;
+}
+
+.delete-button {
+  background-color: #e03131;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c92a2a;
+}
+
+/* Scrollbar Styles */
+.payables-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.payables-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.payables-container::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 3px;
+}
+
+.payables-container::-webkit-scrollbar-thumb:hover {
+  background-color: #888888;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .payables-container {
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .payables-table th,
+  .payables-table td {
+    padding: 8px;
+    font-size: 14px;
+   
+  }
+
+  .receipt-images {
+    width: 100%;
+  }
+
+  .status-badge {
+    padding: 4px 10px;
+    font-size: 12px;
+    min-width: 90px;
+  }
+
+  .status-modal-content {
+    padding: 15px;
+    gap: 15px;
+    min-width: 280px;
+  }
+
+  .status-modal-content h2 {
+    font-size: 18px;
+  }
+
+  .status-modal-buttons {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .payables-container {
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .payables-table {
+    font-size: 12px;
+  }
+
+  .payables-table th,
+  .payables-table td {
+    padding: 6px;
+  }
+
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+    min-width: 80px;
+  }
+
+  .status-modal-content {
+    padding: 10px;
+    gap: 10px;
+    min-width: 260px;
+  }
+
+  .status-modal-content h2 {
+    font-size: 16px;
+  }
+
+  .status-modal-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .status-modal-buttons button {
+    width: 100%;
+  }
+}

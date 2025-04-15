@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  /* Color palette */
+  --dark-green: #272C1E;
+  --deep-olive: #56641F;
+  --medium-green: #789236;
+  --bright-kiwi: #9AB452;
+  --muted-sage: #A2A78C;
+  --light-kiwi: #D9DB9F;
+
+  --deep-blue: #3D52A0;
+  --medium-blue: #7091E6;
+  --soft-blue: #8697C4;
+  --light-blue: #ADBBDA;
+  --pale-blue: #EDE8F5;
+
+  --white: #FFFFFF;
+  --light-gray: #F2F2F2;
+  --medium-gray: #E0E0E0;
+  --dark-gray: #333333;
+  --charcoal: #444444;
+  --black: #000000;
+  --overlay-gray: rgba(200, 200, 200, 0.3);
+}
+body {
+    margin: 0;
+    font-family: "Calibri",Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #0f2d1d, #1e6b41);
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.transaction-wrapper {
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.transaction-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "Calibri",Arial, Helvetica, sans-serif;
+  color: black;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 27px;
+  width: 97%;
+  margin-bottom: 20px;
+}
+
+/* Custom Scrollbar */
+.transaction-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.transaction-container::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 6px;
+}
+
+.transaction-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  border: 2px solid #e0e0e0;
+}
+
+.transaction-container::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Input Rows */
+.top-row,
+.middle-row,
+.bottom-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+}
+
+.field {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.field-wide {
+  flex: 2 1 400px;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Inputs */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--dark-gray);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  color: var(--charcoal);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--dark-gray);
+  outline: none;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* File Upload */
+.file-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--charcoal);
+}
+
+.file-label {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-label:hover {
+  background: #e0e0e0;
+}
+
+.remove-icon {
+  cursor: pointer;
+  color: #dc3545;
+  transition: color 0.3s ease;
+}
+
+.remove-icon:hover {
+  color: #c82333;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+ 
+}
+
+.clear,
+.submit {
+  padding: 10px 20px;
+  gap:5px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear {
+  background: #dc3545;
+  color: white;
+}
+
+.clear:hover {
+  background: #c82333;
+}
+
+.submit {
+  background: #2c6e49;
+  color: white;
+}
+
+.submit:hover {
+  background: #1a472f;
+}
+
+.submit:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Messages */
+.error-message,
+.success-message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.success-message {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+/* Headers */
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+
+  color: #2c6e49;
+}
+
+/* Payables Section */
+.payables-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Scrollbar Styles */
+.transaction-wrapper::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transaction-wrapper::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.transaction-wrapper::-webkit-scrollbar-thumb {
+  background-color: #aaaaaa;
+  border-radius: 3px;
+}
+
+.transaction-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #888888;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .transaction-wrapper {
+    padding: 10px;
+  }
+
+  .transaction-container,
+  .payables-wrapper {
+    padding: 15px;
+  }
+
+  .top-row,
+  .middle-row,
+  .bottom-row {
+    gap: 15px;
+  }
+
+  .field {
+    flex: 1 1 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .clear,
+  .submit {
+    width: 100%;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .transaction-container,
+  .payables-wrapper {
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 12px;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+    width: 80px;
+    background: #122618;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+/* Logo */
+.logo {
+    width: 60px;
+    height: 70px;
+    margin: 20px 0;
+    margin-left: 100px;
+}
+
+/* Navigation */
+.nav a img {
+    width: 30px;
+    filter: grayscale(100%);
+    cursor: pointer;
+    margin: 15px 0;
+    transition: filter 0.3s ease-in-out;
+}
+
+.nav a img:hover {
+    filter: none;
+}
+
+/* Headings */
+h1, h2 {
+  font-family: "Calibri",Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.absolute.bottom-0.left-0.w-full.h-1.bg-\[\#333333\] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Start with width 0 */
+  height: 3px;
+  background-color: #333333;
+  transition: width 0.3s ease-in-out;
+  animation: expandLine 0.8s forwards;
+}
+
+/* Define the animation */
+@keyframes expandLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
