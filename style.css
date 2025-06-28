@@ -153,7 +153,7 @@ body {
 .right img {
    
     height: 80px;
-    width: 50%;
+    
     pointer-events: none;
 }
 
@@ -188,7 +188,7 @@ body {
     }
 
     .right img {
-        width: 100px;
+        width: 300px;
         height: 100px;
     }
 
@@ -200,5 +200,9 @@ body {
 @media (max-width: 768px) {
     .right {
         order: -1;
+    }
+ .right img {
+        width: 200px;
+        height: 100px;
     }
 }
