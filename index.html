@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Monitoring - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form class="container" id="loginForm">
+        <div class="left-box">
+            <div class="left">
+                <div class="input-field">
+                    <input
+                        type="email"
+                        name="email"
+                        class="email"
+                        id="email"
+                        required
+                    />
+                    <label class="labelline label-position" for="email">
+                        Enter your email
+                    </label>
+                </div>
+                <div class="input-field">
+                    <input
+                        type="password"
+                        name="password"
+                        class="password"
+                        id="password"
+                        required
+                    />
+                    <label class="labelline label-password" for="password">
+                        Enter your password
+                    </label>
+                </div>
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <p id="errorText"></p>
+                </div>
+                <div class="button-container">
+                    <button class="login-btn" type="submit" id="loginButton">
+                        Login
+                    </button>
+                    <div class="signupContainer">
+                        <p>Don't have an account? 
+                            <a href="http://192.168.254.192:5173/register">Register</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right section for logo and title -->
+        <div class="right">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjNjY3ZWVhIi8+Cjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TE9HTzwvdGV4dD4KPC9zdmc+" alt="Finance Monitoring Logo" />
+            <h1>Finance Monitoring</h1>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
