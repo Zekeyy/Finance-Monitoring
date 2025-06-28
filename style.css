@@ -151,12 +151,8 @@ body {
 }
 
 .right img {
-    width: 80px;
+   
     height: 80px;
-    margin-bottom: 20px;
-    background: white;
-    border-radius: 50%;
-    padding: 15px;
     pointer-events: none;
 }
 
