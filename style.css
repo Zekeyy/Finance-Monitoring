@@ -153,6 +153,7 @@ body {
 .right img {
    
     height: 80px;
+    width: 50%;
     pointer-events: none;
 }
 
